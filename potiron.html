@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Cucurbitacées</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2em;
+      background-color: #fdf6ec;
+      color: #333;
+    }
+    h1 {
+      color: #b85c38;
+    }
+    .question {
+      margin-bottom: 1.5em;
+    }
+    .question strong {
+      display: block;
+      margin-bottom: 0.5em;
+    }
+    #result {
+      margin-top: 2em;
+      padding: 1em;
+      background-color: #e6ffe6;
+      border: 1px solid #99cc99;
+      display: none;
+    }
+    #startSection {
+      margin-bottom: 2em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎃 Quiz Cucurbitacées</h1>
+
+  <div id="startSection">
+    <p>Entrez votre prénom pour commencer :</p>
+    <input type="text" id="username" placeholder="Votre prénom">
+    <button onclick="startQuiz()">Commencer</button>
+  </div>
+
+  <form id="quizForm" style="display:none;" onsubmit="return false;">
+
+    <div class="question"><strong>1. Quelle partie du potiron contient les graines ?</strong>
+      <label><input type="radio" name="q1" value="0"> a) La tige</label><br>
+      <label><input type="radio" name="q1" value="0"> b) Le pédoncule</label><br>
+      <label><input type="radio" name="q1" value="1"> c) La cavité centrale</label><br>
+      <label><input type="radio" name="q1" value="0"> d) Les feuilles</label>
+    </div>
+
+    <div class="question"><strong>2. Parmi ces espèces, laquelle n’est pas une cucurbitacée ?</strong>
+      <label><input type="radio" name="q2" value="0"> a) Courgette</label><br>
+      <label><input type="radio" name="q2" value="0"> b) Melon</label><br>
+      <label><input type="radio" name="q2" value="1"> c) Tomate</label><br>
+      <label><input type="radio" name="q2" value="0"> d) Citrouille</label>
+    </div>
+
+    <div class="question"><strong>3. Quel est le rôle principal des poils sur les tiges de cucurbitacées ?</strong>
+      <label><input type="radio" name="q3" value="0"> a) Attirer les pollinisateurs</label><br>
+      <label><input type="radio" name="q3" value="1"> b) Protéger contre les herbivores</label><br>
+      <label><input type="radio" name="q3" value="0"> c) Favoriser la photosynthèse</label><br>
+      <label><input type="radio" name="q3" value="0"> d) Stocker l’eau</label>
+    </div>
+
+    <div class="question"><strong>4. Qui cultive des poticarrés ?</strong>
+      <label><input type="radio" name="q4" value="1"> a) Alain Grivel</label><br>
+      <label><input type="radio" name="q4" value="0"> b) Pythagore</label><br>
+      <label><input type="radio" name="q4" value="0"> c) Louis XIV</label><br>
+      <label><input type="radio" name="q4" value="0"> d) Édouard Leclerc</label>
+    </div>
+
+    <div class="question"><strong>5. Température minimale pour semer les graines de potiron ?</strong>
+      <label><input type="radio" name="q5" value="0"> a) 5 °C</label><br>
+      <label><input type="radio" name="q5" value="0"> b) 10 °C</label><br>
+      <label><input type="radio" name="q5" value="1"> c) 15 °C</label><br>
+      <label><input type="radio" name="q5" value="0"> d) 20 °C</label>
+    </div>
+
+    <div class="question"><strong>6. Méthode de conservation la plus adaptée ?</strong>
+      <label><input type="radio" name="q6" value="0"> a) Congélation brute</label><br>
+      <label><input type="radio" name="q6" value="1"> b) Séchage à basse température</label><br>
+      <label><input type="radio" name="q6" value="0"> c) Macération dans l’huile</label><br>
+      <label><input type="radio" name="q6" value="0"> d) Fermentation lactique</label>
+    </div>
+
+    <div class="question"><strong>7. Cuisson qui intensifie la saveur noisette ?</strong>
+      <label><input type="radio" name="q7" value="0"> a) Bouillir</label><br>
+      <label><input type="radio" name="q7" value="0"> b) Cuire à la vapeur</label><br>
+      <label><input type="radio" name="q7" value="1"> c) Rôtir au four</label><br>
+      <label><input type="radio" name="q7" value="0"> d) Frire</label>
+    </div>
+
+    <div class="question"><strong>8. Partie utilisée pour faire des chips ?</strong>
+      <label><input type="radio" name="q8" value="1"> a) Les graines</label><br>
+      <label><input type="radio" name="q8" value="0"> b) La peau</label><br>
+      <label><input type="radio" name="q8" value="0"> c) La chair</label><br>
+      <label><input type="radio" name="q8" value="0"> d) Les feuilles</label>
+    </div>
+
+    <div class="question"><strong>9. Cucurbitacée utilisée comme récipient ?</strong>
+      <label><input type="radio" name="q9" value="1"> a) Courge bouteille</label><br>
+      <label><input type="radio" name="q9" value="0"> b) Potiron rouge vif</label><br>
+      <label><input type="radio" name="q9" value="0"> c) Melon charentais</label><br>
+      <label><input type="radio" name="q9" value="0"> d) Courgette ronde</label>
+    </div>
+
+    <div class="question"><strong>10. Fête des citrouilles sculptées ?</strong>
+      <label><input type="radio" name="q10" value="0"> a) Thanksgiving</label><br>
+      <label><input type="radio" name="q10" value="1"> b) Halloween</label><br>
+      <label><input type="radio" name="q10" value="0"> c) Guy Fawkes Night</label><br>
+      <label><input type="radio" name="q10" value="0"> d) Harvest Festival</label>
+    </div>
+
+    <div class="question"><strong>11. Poids record mondial d’une citrouille ?</strong>
+      <label><input type="radio" name="q11" value="0"> a) 1024 kg</label><br>
+      <label><input type="radio" name="q11" value="0"> b) 1247 kg</label><br>
+      <label><input type="radio" name="q11" value="1"> c) 1278 kg</label><br>
+      <label><input type="radio" name="q11" value="0"> d) 1350 kg</label>
+    </div>
+
+    <div class="question"><strong>12. Poids record en France ?</strong>
+      <label><input type="radio" name="q12" value="0"> a) 850 kg</label><br>
+      <label><input type="radio" name="q12" value="1"> b) 1016 kg</label><br>
+      <label><input type="radio" name="q12" value="0"> c) 920 kg</label><br>
+      <label><input type="radio" name="q12" value="0"> d) 980 kg</label>
+    </div>
+    <div class="question"><strong>13. Quelle couleur est typique du potimarron ?</strong>
+      <label><input type="radio" name="q13" value="0"> a) Vert foncé</label><br>
+      <label><input type="radio" name="q13" value="1"> b) Orange vif</label><br>
+      <label><input type="radio" name="q13" value="0"> c) Jaune pâle</label><br>
+      <label><input type="radio" name="q13" value="0"> d) Blanc crème</label>
+    </div>
+
+    <div class="question"><strong>14. Quelle partie de la courge spaghetti donne l’effet filamenteux ?</strong>
+      <label><input type="radio" name="q14" value="0"> a) Les graines</label><br>
+      <label><input type="radio" name="q14" value="0"> b) La peau</label><br>
+      <label><input type="radio" name="q14" value="1"> c) La chair cuite</label><br>
+      <label><input type="radio" name="q14" value="0"> d) Le pédoncule</label>
+    </div>
+
+    <div class="question"><strong>15. Quelle courge est souvent utilisée en décoration ?</strong>
+      <label><input type="radio" name="q15" value="0"> a) Courge musquée</label><br>
+      <label><input type="radio" name="q15" value="1"> b) Coloquinte</label><br>
+      <label><input type="radio" name="q15" value="0"> c) Potiron</label><br>
+      <label><input type="radio" name="q15" value="0"> d) Courgette</label>
+    </div>
+
+    <div class="question"><strong>16. Quelle courge est réputée pour sa longue conservation ?</strong>
+      <label><input type="radio" name="q16" value="1"> a) Courge butternut</label><br>
+      <label><input type="radio" name="q16" value="0"> b) Courge spaghetti</label><br>
+      <label><input type="radio" name="q16" value="0"> c) Courgette</label><br>
+      <label><input type="radio" name="q16" value="0"> d) Melon</label>
+    </div>
+
+    <button type="button" onclick="calculateScore()">Valider mes réponses</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    function startQuiz() {
+      const name = document.getElementById("username").value.trim();
+      if (name === "") {
+        alert("Veuillez entrer votre prénom.");
+        return;
+      }
+      document.getElementById("startSection").style.display = "none";
+      document.getElementById("quizForm").style.display = "block";
+    }
+
+    function calculateScore() {
+      let score = 0;
+      const totalQuestions = 16;
+      for (let i = 1; i <= totalQuestions; i++) {
+        const radios = document.getElementsByName("q" + i);
+        for (const radio of radios) {
+          if (radio.checked && radio.value === "1") {
+            score++;
+          }
+        }
+      }
+      const name = document.getElementById("username").value;
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = `<strong>Bravo ${name} !</strong><br>Vous avez obtenu <strong>${score}/${totalQuestions}</strong> bonnes réponses.`;
+      resultDiv.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
+
