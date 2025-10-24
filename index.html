@@ -93,11 +93,11 @@
       <label><input type="radio" name="q7" value="0"> d) Frire</label>
     </div>
 
-    <div class="question"><strong>8. Partie utilisée pour faire des chips ?</strong>
-      <label><input type="radio" name="q8" value="1"> a) Les graines</label><br>
-      <label><input type="radio" name="q8" value="0"> b) La peau</label><br>
-      <label><input type="radio" name="q8" value="0"> c) La chair</label><br>
-      <label><input type="radio" name="q8" value="0"> d) Les feuilles</label>
+    <div class="question"><strong>8. Pourquoi ce quiz est interdit sur Facebook ?</strong>
+      <label><input type="radio" name="q8" value="0"> a) Car cul cul bittes ASSEZ !!!! </label><br>
+      <label><input type="radio" name="q8" value="1"> b) Par ce qu'il y a déjà une citrouille orange avec un gros melon à la maison blanche</label><br>
+      <label><input type="radio" name="q8" value="0"> c) Les réponses à ce quiz sont trop intelligentes pour être mis sur Facebook</label><br>
+      
     </div>
 
     <div class="question"><strong>9. Cucurbitacée utilisée comme récipient ?</strong>
@@ -155,6 +155,28 @@
       <label><input type="radio" name="q16" value="0"> d) Melon</label>
     </div>
 
+ <div class="question"><strong>17. Quand doit-on ramasser les potirons ?</strong>
+      <label><input type="radio" name="q17" value="0"> a) Quand Bénè masse la queue du potiron et que celle-ci ne réagit pas</label><br>
+      <label><input type="radio" name="q17" value="0"> b) Quand les cerfs ont fini de bramer à Xonrupt</label><br>
+      <label><input type="radio" name="q17" value="1"> c) Quand la tige devient plus sombre</label>
+    </div>
+
+    <div class="question"><strong>18. Qui profite d’un endroit de rêve avec vue sur l’eau en toute saison ?</strong>
+      <label><input type="radio" name="q18" value="1"> a) Sylvie G au bord du lac et Nathalie dans son jardin au bord de la Vologne</label><br>
+      <label><input type="radio" name="q18" value="0"> b) Bernard Laroche avec une pelle à la main</label><br>
+      <label><input type="radio" name="q18" value="0"> c) Schubert en allant à la pêche</label>
+    </div>
+
+    <div class="question"><strong>19. Qui a travaillé très durement pour nourrir le jardin avec du crottin de cheval ?</strong>
+      <label><input type="radio" name="q19" value="1"> a) Alain, Michel, Martial et Raymond</label><br>
+      <label><input type="radio" name="q19" value="0"> b) Les donneuses d’ordre : Nadine, Nathalie, Sylvie et Bénè</label><br>
+      <label><input type="radio" name="q19" value="0"> c) Nicolas Sarkozy</label>
+    </div>
+
+    <div class="question"><strong>20. Où peut-on trouver de la menthe « Nadine » ?</strong>
+      <label><input type="radio" name="q20" value="1"> a) à Bouvacôte et à la Rayée</label><br>
+      <label><input type="radio" name="q20" value="0"> b) Uniquement à Bouvacôte</label>
+    </div>
     <button type="button" onclick="calculateScore()">Valider mes réponses</button>
   </form>
 
@@ -173,7 +195,7 @@
 
     function calculateScore() {
       let score = 0;
-      const totalQuestions = 16;
+      const totalQuestions = 20;
       for (let i = 1; i <= totalQuestions; i++) {
         const radios = document.getElementsByName("q" + i);
         for (const radio of radios) {
@@ -184,11 +206,12 @@
       }
       const name = document.getElementById("username").value;
       const resultDiv = document.getElementById("result");
-      resultDiv.innerHTML = `<strong>Bravo ${name} !</strong><br>Vous avez obtenu <strong>${score}/${totalQuestions}</strong> bonnes réponses.`;
+      resultDiv.innerHTML = `<strong>Bravo ${name} !</strong><br>Vous avez obtenu <strong>${score}/${totalQuestions}</strong>  !`;
       resultDiv.style.display = "block";
     }
   </script>
 
 </body>
 </html>
+   
 
